@@ -5,7 +5,7 @@ use App\Http\Controllers\ShopifyController;
 
 Route::get('/', function () {
     return view('custom');
-})->name('custom');
+})->middleware(['verify.shopify'])->name('home');
 
 Route::get('/products-xml1', [ShopifyController::class, 'getProductsXml1']);
 Route::get('/products-xml2', [ShopifyController::class, 'getProductsXml2']);
